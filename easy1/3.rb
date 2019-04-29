@@ -11,12 +11,17 @@
 
 #refactor
 
+# def digit_list(integer)
+#   # array_of_int_in_str = integer.to_s.split("")
+#   integer.to_s.split("").map {|char| char.to_i }
+#   # new_array
+# end
+
 def digit_list(integer)
-  # array_of_int_in_str = integer.to_s.split("")
-  integer.to_s.split("").map {|char| char.to_i }
-  # new_array
+  integer.to_s.split("").map(&:to_i)
 end
 
+# (&:to_i) is Ruby's syntactic sugar
 
 p digit_list(12345)
 p digit_list(7)
