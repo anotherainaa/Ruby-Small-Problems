@@ -21,7 +21,6 @@ def count_occurrences(items)
   end
 end
 
-
 vehicles = [
   'car', 'car', 'truck', 'car', 'SUV', 'truck',
   'motorcycle', 'motorcycle', 'car', 'truck'

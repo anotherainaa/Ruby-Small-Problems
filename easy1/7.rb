@@ -11,7 +11,7 @@
 def stringy(integer, start_value = 1)
   string = ''
   integer.times do |i|
-    if start_value == 0
+    if start_value.zero?
       i.even? ? string << '0' : string << '1'
     else
       i.even? ? string << '1' : string << '0'
@@ -19,7 +19,6 @@ def stringy(integer, start_value = 1)
   end
   string
 end
-
 
 puts stringy(6) == '101010'
 puts stringy(9) == '101010101'

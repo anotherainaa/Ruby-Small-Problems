@@ -9,30 +9,26 @@
 #   new_array
 # end
 
-#refactor
+# refactor
 
 # def digit_list(integer)
 #   # array_of_int_in_str = integer.to_s.split("")
-#   integer.to_s.split("").map {|char| char.to_i }
+#   integer.to_s.split.map {|char| char.to_i }
 #   # new_array
 # end
 
 def digit_list(integer)
-  integer.to_s.split("").map(&:to_i)
+  integer.to_s.split.map(&:to_i)
 end
 
 # (&:to_i) is Ruby's syntactic sugar
 
-p digit_list(12345)
+p digit_list(12_345)
 p digit_list(7)
-p digit_list(375290)
+p digit_list(375_290)
 p digit_list(444)
 
-
-
-puts digit_list(12345) == [1, 2, 3, 4, 5]     # => true
-puts digit_list(7) == [7]                     # => true
-puts digit_list(375290) == [3, 7, 5, 2, 9, 0] # => true
-puts digit_list(444) == [4, 4, 4]             # => true
-
-
+puts digit_list(12_345) == [1, 2, 3, 4, 5]     # => true
+puts digit_list(7) == [7]                      # => true
+puts digit_list(375_290) == [3, 7, 5, 2, 9, 0] # => true
+puts digit_list(444) == [4, 4, 4]              # => true
