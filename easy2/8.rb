@@ -1,27 +1,37 @@
+# def compute_sum(number)
+#   sum = nil
+#   for i in 1..number
+#     if sum.nil?
+#       sum = i
+#     else
+#       sum += i
+#     end
+#   end
+#   sum
+# end
+
+# def compute_product(number)
+#   product = nil
+#   i = 1
+#   while i <= number
+#     if product.nil?
+#       product = i
+#     else
+#       product *= i
+#     end
+#     i += 1
+#   end
+#   product
+# end
+
+# Further exploration
+
 def compute_sum(number)
-  sum = nil
-  for i in 1..number
-    if sum.nil?
-      sum = i
-    else
-      sum += i
-    end
-  end
-  sum
+  (1..number).to_a.inject(:+)
 end
 
 def compute_product(number)
-  product = nil
-  i = 1
-  while i <= number
-    if product.nil?
-      product = i
-    else
-      product *= i
-    end
-    i += 1
-  end
-  product
+  (1..number).to_a.inject(:*)
 end
 
 puts ">> Please enter an integer greater than 0:"
@@ -37,3 +47,5 @@ elsif input == 'p'
 else
   puts "Unknown operation."
 end
+
+
