@@ -40,6 +40,13 @@ def is_odd5?(integer)
   integer.remainder(2) != 0
 end
 
+# solution 6: using abs to return the absolute number
+# solution provided by another student
+
+def is_odd_remainder?(integer)
+  integer.remainder(2).abs == 1
+end
+
 
 # puts is_odd?(2)    # => false
 # puts is_odd?(5)    # => true
