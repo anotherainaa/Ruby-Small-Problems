@@ -28,6 +28,7 @@ end
 # Solution 4: until loop
 # Problems: Initially string is printed once when 0 is input
 # This is because the until condition needed to be n >= number not n > number
+# Caveats: If n == number, forever loop when number is -1
 
 def repeat4(string, number)
   n = 0
@@ -61,5 +62,6 @@ end
 
 # Change the method name here to test other methods.
 
-# repeat('Hello', 5)
-repeat('Hello', -1)
+# repeat('Hello', 5
+repeat3('Hello', 0)
+repeat3('Hello', -1)
