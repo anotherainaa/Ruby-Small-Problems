@@ -9,7 +9,7 @@ end
 # Caveats: Must be careful if incrementing ++ because array is mutated.
 # See loop solution
 # Notnecessary to use a variable to iterate through array. 
-# This is done through loop and #pop reduces the array length
+# This is done through until loop and #pop reduces the array length
 # causing the loop to break when condition is met.
 
 def reverse_sentence2(string)
