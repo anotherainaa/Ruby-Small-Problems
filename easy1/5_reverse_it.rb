@@ -7,7 +7,10 @@ end
 # Solution 2: Iterate over array and return last
 # item while removing it from array using Array#pop
 # Caveats: Must be careful if incrementing ++ because array is mutated.
-# See loop solution.
+# See loop solution
+# Notnecessary to use a variable to iterate through array. 
+# This is done through loop and #pop reduces the array length
+# causing the loop to break when condition is met.
 
 def reverse_sentence2(string)
   new_string = []
@@ -20,6 +23,9 @@ end
 
 # Solution 3: Using loop
 # Mutating an array while looping through it
+# Note the necessity to use variable count to iterate through the array
+# and as condition to break the loop. 
+# Else, it loops forever
 
 def reverse_sentence3(string)
   new_string = []
@@ -33,9 +39,11 @@ def reverse_sentence3(string)
   new_string.join(' ')
 end
 
-p reverse_sentence('')
-p reverse_sentence('Hello World')
-p reverse_sentence('Reverse these words')
-puts reverse_sentence('') == ''
-puts reverse_sentence('Hello World') == 'World Hello'
-puts reverse_sentence('Reverse these words') == 'words these Reverse'
+p reverse_sentence2('')
+p reverse_sentence2('Hello World')
+p reverse_sentence2('Reverse these words')
+p reverse_sentence3('Random test here')
+p reverse_sentence3('this is a sentence')
+puts reverse_sentence2('') == ''
+puts reverse_sentence2('Hello World') == 'World Hello'
+puts reverse_sentence2('Reverse these words') == 'words these Reverse'
