@@ -21,6 +21,7 @@ end
 # Using a method to define default name
 # Caveats = This doesn't work when entering name into name = gets.chomp above
 # which means there is no chance for the default value 'Teddy' to ever be shown in this case
+# "".nil? => false while "".empty? => true
 
 def compute_age(name = 'Teddy')
   age = rand(20..200)
