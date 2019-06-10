@@ -35,3 +35,9 @@ end
 puts sum(23) == 5
 puts sum(496) == 19
 puts sum(123_456_789) == 45
+
+# Other solution by other students 
+# Note that this is only applicable for Ruby 2.4 and above
+def sum4(number)
+  number.digits.sum
+end
