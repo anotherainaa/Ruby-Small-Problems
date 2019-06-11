@@ -44,6 +44,8 @@ def short_long_short3(string1, string2)
   end
 end
 
+# Key takeaway is that Clarity is more important than density.
+
 # Other solution by LS
 # Note that this may be harder to understand.
 
