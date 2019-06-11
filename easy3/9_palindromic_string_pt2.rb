@@ -1,23 +1,25 @@
+# My solution
+
 def palindrome?(words)
   words.reverse == words
 end
 
-# def strip_non_alphanumeric_characters(words)
-#   words = words.split("") if words.class == String
-#   array_of_characters = []
-#   valid_characters = ('a'..'z').to_a + %w(0 1 2 3 4 5 6 7 8 9)
-#   words.each do |letter|
-#     if valid_characters.include?(letter.downcase)
-#       array_of_characters << letter.downcase
-#     end
-#   end
-#   array_of_characters
-# end
+def strip_non_alphanumeric_characters(words)
+  words = words.split("") if words.class == String
+  array_of_characters = []
+  valid_characters = ('a'..'z').to_a + %w(0 1 2 3 4 5 6 7 8 9)
+  words.each do |letter|
+    if valid_characters.include?(letter.downcase)
+      array_of_characters << letter.downcase
+    end
+  end
+  array_of_characters
+end
 
-# def real_palindrome?(words)
-#   words = strip_non_alphanumeric_characters(words)
-#   palindrome?(words)
-# end
+def real_palindrome?(words)
+  words = strip_non_alphanumeric_characters(words)
+  palindrome?(words)
+end
 
 
 # LS Solution
@@ -25,6 +27,9 @@ def real_palindrome?(string)
   string = string.downcase.delete('^a-z0-9')
   palindrome?(string)
 end
+
+# Further exploration
+# Read string doc #delete and #count again.
 
 p real_palindrome?('madam') == true
 p real_palindrome?('Madam') == true
