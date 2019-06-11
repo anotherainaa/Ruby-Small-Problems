@@ -40,3 +40,20 @@ p power2(2, 3)
 p power2(2, 4) 
 p power2(2, 5)
 
+# Other interesting solution by other students: Recursive solution
+# This is similat to above but I found it abit easier to get this one
+# Probably because this more easily translated into below
+# power of 5: n * multiply(n、n) * multiply(n, n)
+
+
+def power_rec(n, ex)
+  if ex == 0
+    1
+  else
+    if ex % 2 == 0
+      power_rec(multiply(n,n), ex/2)
+    else
+      n * power_rec(multiply(n,n), ex/2)
+    end
+  end
+end
