@@ -14,20 +14,21 @@ end
 
 # LS Solution
 # Note that it wasn't necessary to AND all the conditions because the order represents the conditions already
+
 def leap_year?(year)
   if year % 400 == 0
     true
   elsif year % 100 == 0
     false
   else
-    year & 4 == 0
+    year % 4 == 0
   end
 end
 
 # Further exploration
 # Turn the other way around
 
-def leap_year?(year)
+def leap_year4?(year)
   if year % 4 == 0
     if year % 100 == 0 
       if year % 400 == 0
