@@ -1,11 +1,13 @@
 def crunch(string)
   result = []
   words = string.split('')
+  
   saved_letter = words.shift
   result << saved_letter
+  
   words.each do |word|
     if word == " "
-      result << word 
+      result << word
     elsif word != saved_letter
       saved_letter = word
       result << saved_letter
