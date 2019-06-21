@@ -17,6 +17,8 @@ def century(number)
   end
 end
 
+# Try to simplify the above by using helper method century_suffix that adds the suffix
+
 p century(2000) == '20th'
 p century(2001) == '21st'
 p century(1965) == '20th'
