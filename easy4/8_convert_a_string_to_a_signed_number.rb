@@ -39,3 +39,4 @@ end
 p string_to_signed_integer('-4321') == -4321
 p string_to_signed_integer('-570') == -570
 p string_to_signed_integer('+100') == 100
+p string_to_signed_integer('100') == 100
