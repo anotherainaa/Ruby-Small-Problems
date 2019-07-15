@@ -40,8 +40,6 @@ def time_of_day(delta_minutes)
   "#{format('%02d:%02d', hours, minutes)}"
 end
 
-
-
 # Further exploration using time
 
 def time_of_day2(delta_minutes)
