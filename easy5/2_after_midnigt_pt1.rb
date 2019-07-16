@@ -5,6 +5,10 @@ MINUTES_IN_A_DAY = HOURS_PER_DAY * MINUTES_PER_HOUR
 require 'pry'
 
 # This way my fist attempt at this problem.
+# there is a lot of redundancy here.
+# This was also the point where I noticed that I'm quite weak at
+# analyzing problems that require mathematical equation
+
 def time_of_day(number)
   hour, minute = number.divmod(60)
   if hour > 24
@@ -44,6 +48,17 @@ end
 
 def time_of_day2(delta_minutes)
   current_time = Time.now
+  calculated_time = current_time + (delta_minutes * SECONDS_PER_DAY)
+  calculated_time.strftime('%A %H:%M')
+end
+
+# I later realised that I could do this to match the fulfil the
+# question requirement properly
+# I guess I had preferred the real time calculation more than the question
+# at hand.
+
+def time_of_day(delta_minutes)
+  current_time = Time.parse('24:00')
   calculated_time = current_time + (delta_minutes * SECONDS_PER_DAY)
   calculated_time.strftime('%A %H:%M')
 end
