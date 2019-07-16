@@ -26,6 +26,8 @@ to try the next revision around :
 - refactoring my original solution which should probably be like this:
 Insert the character if it is not the same with the last inserted character
 - Find regex solution to this
+- Any other method of solving this problem?
+
 
 =end
 
