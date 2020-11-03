@@ -102,6 +102,8 @@ Example:
 
 =end
 
+# First attempt
+
 def print_in_box(string)  
   outer_border = "+" + "-" * (string.length + 2) + "+"
   inner_border = "|" + " " * (string.length + 2) + "|"
@@ -114,13 +116,12 @@ def print_in_box(string)
     puts inner_border
     puts outer_border
   else
-    messages = string.scan(/.{1,76}/m)
+    messages = string.scan(/.{1,76}/)
 
     puts "+" + "-" * (messages[0].length + 2) + "+"
     puts "|" + " " * (messages[0].length + 2) + "|"
 
     messages.each do |message|
-      # puts message
       puts "| " + message + " " * (76 - message.length) + " |"
     end
 
@@ -129,10 +130,37 @@ def print_in_box(string)
   end
 end
 
-
-# print_in_box("test")
-print_in_box("To boldly go where no one has gone before. To boldly go where no one has gone before. To boldly go where no one has gone before. To boldly go where no one has gone before.")
-
-
 # Final comments
-# How can I change the method to be more DRY?  
+# How can I change the method to be more DRY? 
+
+# Second attempt to make the code more DRY
+# Comments: Tried to make the code more dry but should maybe look at other student's exploration to explore other ideas
+
+def print_in_box(string)  
+  messages = []
+  if string == ""
+    messages << string
+  else
+    messages = string.scan(/.{1,76}/)
+  end
+
+  puts "+" + "-" * (messages[0].length + 2) + "+"
+  puts "|" + " " * (messages[0].length + 2) + "|"
+
+  messages.each do |message|
+    if string.length <= 76
+      puts "| " + message + " |"
+    else
+      puts "| " + message + " " * (76 - message.length) + " |"
+    end
+  end
+
+  puts "|" + " " * (messages[0].length + 2) + "|"
+  puts "+" + "-" * (messages[0].length + 2) + "+"
+
+end
+
+print_in_box("")
+print_in_box("test")
+print_in_box("To boldly go where no one has gone before.")
+print_in_box("To boldly go where no one has gone before. To boldly go where no one has gone before. To boldly go where no one has gone before. To boldly go where no one has gone before.")
