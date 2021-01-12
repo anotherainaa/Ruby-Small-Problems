@@ -16,8 +16,8 @@ Algorithm
 #   results.join(" ")
 # end
 
-def reverse_sentence(words)
-  string.split.reverse.join
+def reverse_sentence(string)
+  string.split.reverse.join(" ")
 end
 
 puts reverse_sentence('') == ''
