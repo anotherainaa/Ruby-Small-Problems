@@ -7,15 +7,18 @@ Algorithm
 - return results joined together with a space
 =end
 
+# def reverse_sentence(words)
+#   results = []
+#   words.split.each do |word|
+#     results.unshift(word)
+#   end
+
+#   results.join(" ")
+# end
+
 def reverse_sentence(words)
-  results = []
-  words.split.each do |word|
-    results.unshift(word)
-  end
-
-  results.join(" ")
+  string.split.reverse.join
 end
-
 
 puts reverse_sentence('') == ''
 puts reverse_sentence('Hello World') == 'World Hello'
