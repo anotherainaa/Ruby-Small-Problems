@@ -46,18 +46,42 @@ Algorithm
 - join the results with a space and return this 
 =end
 
+# def reverse_words(string)
+#   results = []
+#   string.split.each do |word|
+#     if word.size > 4
+#       results << word.reverse
+#     else
+#       results << word
+#     end
+#   end
+#   results.join(" ")
+# end
+
+=begin
+- Curious about using #map for transformation
+
+Algorithm
+- split the words at the spaces into an array of words
+- transform the array using #map
+- for each word, 
+  - if word.size > 4, reverse it. 
+  - else leave the word as is
+- save the array into a variable results
+- join the results array at spaces and return as a string
+
+=end
+
 def reverse_words(string)
-  results = []
-  string.split.each do |word|
+  results = string.split.map do |word|
     if word.size > 4
-      results << word.reverse
+      word.reverse
     else
-      results << word
+      word
     end
   end
   results.join(" ")
 end
-
 
 puts reverse_words('Professional')          # => lanoisseforP
 puts reverse_words('Walk around the block') # => Walk dnuora the kcolb
