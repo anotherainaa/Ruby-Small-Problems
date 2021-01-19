@@ -52,8 +52,38 @@ def stringy(int)
   results
 end
 
-puts stringy(6) == '101010'
-puts stringy(9) == '101010101'
-puts stringy(4) == '1010'
-puts stringy(7) == '1010101'
-puts stringy(0) == ''
+=begin
+- take an extra argument that defaults to 1
+- but will start with 0 if this argument is set to 0. 
+
+approach
+- take the given integer
+- Loop only as many times as the given integer
+- if the optinal argument is equal to 1 
+  - if so, insert 1 if even, else insert 0
+- else
+  - insert 0 if even, else insert 1
+- Return the new variable with string
+
+=end
+
+def stringy(int, start = 1)
+  results = ""
+
+  int.times do |i|
+    if start == 1 
+      number = i.even? ? "1" : "0"
+      results << number
+    else
+      number = i.even? ? "0" : "1"
+      results << number
+    end
+  end
+  results
+end
+
+puts stringy(6, 0) == '101010'
+puts stringy(9, 0) == '101010101'
+# puts stringy(4) == '1010'
+# puts stringy(7) == '1010101'
+# puts stringy(0) == ''
