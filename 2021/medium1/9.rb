@@ -1,15 +1,25 @@
-def fibonacci(nth)
-  first = 0
-  second = 1
-  sum = 0
+# def fibonacci(nth)
+#   first = 0
+#   second = 1
+#   sum = 0
 
-  nth.times do
-    sum = first + second
-    second = first
-    first = sum
+#   nth.times do
+#     sum = first + second
+#     second = first
+#     first = sum
+#   end
+
+#   sum
+# end
+
+def fibonacci(nth)
+  first, last = [1, 1]
+
+  3.upto(nth) do 
+    first, last = [last, first + last]
   end
 
-  sum
+  last
 end
 
 #Order: 1, 1, 2, 3, 5, 8, 13, 21
