@@ -18,8 +18,6 @@ def fibonacci(nth)
   3.upto(nth) do 
     first, last = [last, first + last]
   end
-
-  last
 end
 
 #Order: 1, 1, 2, 3, 5, 8, 13, 21
