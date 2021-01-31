@@ -37,5 +37,4 @@ def longest_sentence(text)
 end
 
 file = File.open("/Users/ainaasakinah/Desktop/pg84.txt")
-
 p longest_sentence(file.read)
