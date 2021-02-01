@@ -47,3 +47,24 @@ end
 p friday_13th(2015) == 3
 p friday_13th(1986) == 1
 p friday_13th(2019) == 2
+
+=begin 
+Further exploration
+- count all the months with five fridays
+- must account for leap years 
+
+Approach
+- check if leap year? 
+- if leap year, Feburary is 29 days. 
+
+- 1, 3, 5, 7, 8, 10, 12 - 31 days
+- 4, 6, 9, 11 - 30 days
+- 2 - 28 or 29 days 
+
+for each month, sequentially go through all dates
+  - if Friday, friday count += 1 
+  - if Friday count is more than 5, five_fridays_count += 1
+
+return the five_fridays_count
+
+=end
