@@ -34,19 +34,32 @@ Algorithm
 =end
 
 
-def balanced?(str)
-  parentheses = str.delete('^()')
-  return true if parentheses.empty?
+# def balanced?(str)
+#   parentheses = str.delete('^()')
+#   return true if parentheses.empty?
 
-  until parentheses == parentheses.sub("()", "")
-    parentheses.sub!("()", "")
-  end
+#   until parentheses == parentheses.sub("()", "")
+#     parentheses.sub!("()", "")
+#   end
 
-  return true if parentheses.empty?
-  return false
-end
+#   return true if parentheses.empty?
+#   return false
+# end
 
 # Try again with the LS solution
+
+# Further exploration
+
+def balanced?(string)
+  parens = 0
+  string.each_char do |char|
+    parens += 1 if ['(', '[', '{'].include?(char)
+    parens -= 1 if [')', ']', '}'].include?(char)
+    break if parens < 0
+  end
+
+  parens.zero?
+end
 
 p balanced?('What (is) this?') == true
 p balanced?('What is) this?') == false
@@ -56,3 +69,11 @@ p balanced?('((What)) (is this))?') == false
 p balanced?('Hey!') == true
 p balanced?(')Hey!(') == false
 p balanced?('What ((is))) up(') == false
+
+p balanced?('What [is] this?') == true
+p balanced?('What is} this?') == false
+
+p balanced?(')Hey!(') == false
+p balanced?('What [{is}] up(') == false
+
+p balanced?('What {is} this?') == true
