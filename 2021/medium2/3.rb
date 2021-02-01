@@ -41,18 +41,19 @@ Algorithm
 def letter_percentages(str)
   results = Hash.new(0)
 
-  str.chars do |char|
-    results[:lowercase] = str.count('a-z')
-    results[:uppercase] = str.count('A-Z')
-    results[:neither] = str.count('^A-Za-z')
-  end
+  results[:lowercase] = str.count('a-z')
+  results[:uppercase] = str.count('A-Z')
+  results[:neither] = str.count('^A-Za-z')
 
   results.each do |category, count|
-    results[category] = (count.to_f / str.length) * 100
+    results[category] = ((count.to_f / str.length) * 100).round(2)
   end
   results
 end
 
+# Improve this by separating the methods and also counts and percentages!
+
 p letter_percentages('abCdef 123') == { lowercase: 50, uppercase: 10, neither: 40 }
 p letter_percentages('AbCd +Ef') == { lowercase: 37.5, uppercase: 37.5, neither: 25 }
 p letter_percentages('123') == { lowercase: 0, uppercase: 0, neither: 100 }
+p letter_percentages('abcdefGHI')
